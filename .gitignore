@@ -1,0 +1,8 @@
+.DS_Store
+samples/iphone/build/
+samples/iphone/*.moved-aside/
+samples/iphone/Settings.h
+samples/iphone/Powershop.xcodeproj/roger*
+samples/iphone/Powershop.xcodeproj/mogest*
+samples/rails/tmp
+samples/rails/log

@@ -1,0 +1,29 @@
+/*
+ *  settings.h
+ *  Powershop
+ *
+ *  Created by Roger Nesbitt on 5/01/10.
+ *  Copyright 2010 Powershop. All rights reserved.
+ *
+ *
+ *  RENAME THIS FILE TO Settings.h ONCE YOU HAVE CONFIGURED IT.
+ *
+ */
+
+
+/*
+ * Alter these defines to configure your application
+ */
+
+#define OAUTH_CONSUMER_KEY	  @"4046ea038c5d86e12d08fe1b2df139b9"
+#define OAUTH_CONSUMER_SECRET @"6ff9e03eac761896e1b91d48dff9c503"
+#define SERVICE_PROVIDER_NAME @"powershop-official"
+#define PRODUCT_NAME		  @"Powershop"
+
+/*
+ * Uncomment one of the following defines depending on which server you are targeting
+ */
+
+//#define TARGET_PRODUCTION_SERVER
+//#define TARGET_TEST_SERVER
+#define TARGET_DEVELOPMENT_SERVER

@@ -1,0 +1,82 @@
+<% if flash[:notice] %><p style="font-weight: bold;"><%=h flash[:notice] %><% end %>
+
+  <h1>Powershop account for <%=h "#{@customer.first_name} #{@customer.last_name} (#{@customer.email})" %></h1>
+
+  <p><%= link_to "logout", :action => "logout" %></p>
+
+  <% @customer.properties.each do |property| %>
+  <% icp_number = property.icp_number %>
+  <% address = property.address %>
+  <% property_data = @property_data[icp_number] %>
+
+  <h2>ICP <%=h icp_number %></h2>
+  <p><%=h "#{address.flat_number}/#{address.street_number} #{address.street_name}, #{address.suburb}, #{address.district}, #{address.region}" %></p>
+
+  <h3>Unit balance</h3>
+  <p>Current balance is <%=h property.unit_balance %> units - consuming <%=h property.daily_consumption %> units per day</p>
+
+  <h3>Registers</h3>
+  <table>
+    <tr><th>Number</th><th>Last Read At</th><th>Last Read Value</th><th>Estimated Read</th></tr>
+    <% property.registers.each do |register| %>
+    <tr>
+      <td><%=h register.register_number %></td>
+      <td><%=h register.last_reading_at %></td>
+      <td><%=h register.last_reading_value %></td>
+      <td><%=h register.estimated_reading_value %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <h3>Products available</h3>
+  <table>
+    <tr><th>Product</th><th>Type</th><th>Price Per Unit</th></tr>
+    <% property_data[:products].each do |product| %>
+    <tr>
+      <td><%=h product.name %></td>
+      <td><%=h product['type'] %></td>		  
+      <td align='right'><%=h product.price_per_unit %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <h3>Register readings</h3>
+  <table>
+    <tr><th>Register</th><th>Date</th><th>Type</th><th>Value</th></tr>
+    <% property_data[:readings].each do |reading| %>
+    <tr>
+      <td><%=h reading.register_number %></td>
+      <td><%=h reading.read_at %></td>
+      <td><%=h reading.reading_type %></td>
+      <td><%=h reading.reading_value %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <h3>Enter readings</h3>
+  <% form_tag :action => "readings", :id => icp_number do %>
+  <% property.registers.each do |register| %>
+  <div>
+    Register <%=h register.register_number %>: 
+    <%= text_field_tag "readings[#{register.register_number}]" %> (<%=h register.dials %> digits)
+  </div>
+  <% end %>
+  <%= submit_tag "Submit Readings" %>
+  <% end %>
+
+
+  <h3>Fast Top-Up</h3>
+  <% if !property_data[:top_up] %>
+  <p>Your account is not in arrears.</p>
+  <% else %>
+  <% form_tag :action => "top_up", :id => icp_number do %>
+  <%= hidden_field_tag :key, property_data[:top_up].offer_key %>
+  <p>
+    Buy <%= -property_data[:top_up].unit_balance %> units 
+    of "<%=h property_data[:top_up].product_name %>" 
+    for <%= number_to_currency property_data[:top_up].total_price %> 
+    <%= submit_tag "Buy Now" %>
+  </p>
+  <% end %>
+  <% end -%>
+  <% end -%>
