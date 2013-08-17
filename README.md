@@ -1,7 +1,5 @@
-powershop-api
+Welcome to Powershop's API
 =============
-
-## Welcome to Powershop's API
 
 ![Powered by Powershop](http://www.powershop.co.nz/content/developers-api/images/badge-powered-by-powershop.png)
 
