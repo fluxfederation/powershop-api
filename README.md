@@ -1,7 +1,7 @@
 Welcome to Powershop's API
 =============
 
-![Powered by Powershop](http://www.powershop.co.nz/content/developers-api/images/badge-powered-by-powershop.png)
+[![Powered by Powershop](http://www.powershop.co.nz/content/developers-api/images/badge-powered-by-powershop.png)](http://www.powershop.com)
 
 Getting up and running with our API is easy, but there are a few steps involved before you can get started:
 
