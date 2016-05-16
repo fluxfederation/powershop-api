@@ -9,7 +9,7 @@ Welcome to Powershop's API
 
 Getting up and running with our API is easy, but there are a few steps involved before you can get started:
 
-1. You'll first need to register an API key with us, just email us at: [developers@powershop.co.nz](mailto:developers@powershop.co.nz)
+1. You'll first need to register an API key with us. We aren't offering them at the moment but may consider doing it again in the future.
 2. Next you'll need to know some basics around OAuth 1.0a and how it works, so get your google on if you don't already know.
 3. And finally, checkout our [terms and conditions](https://github.com/powershop/powershop-api/blob/master/doc/API%20terms%20and%20conditions.pdf) before you get started, so you know what we're about and why you'd want to connect to our API.
 
