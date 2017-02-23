@@ -1,6 +1,6 @@
 **NOTE**: We have recently overhauled our API and so it is not quite ready to be exposed to the public.
 
-We plan on exposing the API once again once everything is stable and ready. Check back in a few months or so :)
+The API _may_ be reopened to the public in the future.
 
 Welcome to Powershop's API
 =============
