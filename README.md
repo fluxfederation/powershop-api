@@ -1,5 +1,7 @@
 **NOTE**: We have recently overhauled our API and so it is not quite ready to be exposed to the public.
 
+![Abandon all hope](https://s-media-cache-ak0.pinimg.com/736x/91/b9/a8/91b9a849256ec6bd88d7875676667262.jpg)
+
 We plan on exposing the API once again once everything is stable and ready. Check back in a few months or so :)
 
 Welcome to Powershop's API
