@@ -1,6 +1,6 @@
-**NOTE**: We have recently overhauled our API and so it is not quite ready to be exposed to the public.
+We have closed off all versions of the public API (since 2016)
 
-The API _may_ be reopened to the public in the future.
+Future API _may_ be reopened to the public in the future but there are no firm plans at this stage. This README below is for reference purposes only.
 
 Welcome to Powershop's API
 =============
